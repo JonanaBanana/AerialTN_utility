@@ -47,14 +47,14 @@ def generate_launch_description():
             }]
             ),
         Node(
-            package='ircam_decoder',
-            executable='ircam_decoder',
-            name='ircam_decoder_node'
+            package='aerial_tn',
+            executable='voxl_ircam_decoder',
+            name='voxl_ircam_decoder_node'
             ),
         Node(
-            package='px4_republisher',
-            executable='republisher_node',
-            name='px4_republisher'
+            package='aerial_tn_utility',
+            executable='px4_odom_republisher_node',
+            name='px4_odom_republisher_node'
         ),
         Node(
             package='rviz2',
