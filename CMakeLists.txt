@@ -28,6 +28,26 @@ ament_target_dependencies(px4_odom_republisher_node rclcpp px4_msgs nav_msgs geo
 
 install(TARGETS px4_odom_republisher_node DESTINATION lib/${PROJECT_NAME})
 
+# Build the ircam decoder node
+add_executable(ircam_decoder src/ircam_decoder.cpp)
+target_include_directories(ircam_decoder PRIVATE
+  ${AVCODEC_INCLUDE_DIRS}
+  ${AVUTIL_INCLUDE_DIRS}
+  ${SWSCALE_INCLUDE_DIRS}
+)
+ament_target_dependencies(ircam_decoder
+  rclcpp
+  sensor_msgs
+)
+target_link_libraries(ircam_decoder
+  PkgConfig::AVCODEC
+  PkgConfig::AVUTIL
+  PkgConfig::SWSCALE
+)
+install(TARGETS ircam_decoder
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 install(DIRECTORY
   launch
   DESTINATION share/${PROJECT_NAME}/
@@ -35,5 +55,5 @@ install(DIRECTORY
 install(
   DIRECTORY rviz/
   DESTINATION share/${PROJECT_NAME}/rviz)
-
+  
 ament_package()
