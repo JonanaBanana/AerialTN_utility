@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>aerial_tn_utility</name>
+  <version>1.0.0</version>
+  <description>Utility code for AerialTN</description>
+  <maintainer email="202004778@post.au.dk">Jonathan Nielsen</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>px4_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf2_ros</depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
