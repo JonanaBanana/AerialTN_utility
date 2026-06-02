@@ -16,6 +16,18 @@ colcon build --packages-select aerial_tn_utility
 source install/setup.bash
 ```
 
+## Quick start
+
+In most cases, simply launch the decoder and play back your rosbag:
+
+```bash
+ros2 launch aerial_tn_utility decoder_launch.py
+```
+
+```bash
+ros2 bag play <path_to_bag>
+```
+
 ## Nodes
 
 ### `ircam_decoder`
