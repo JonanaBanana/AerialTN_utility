@@ -4,15 +4,25 @@ ROS 2 utility package for the AerialTN drone platform (VOXL-based). Provides H.2
 
 ## Dependencies
 
-- [`aerial_tn`](https://github.com/AerialTN/aerial_tn) — provides the `voxl_h264_decoder` node
-- `px4_msgs`
-- FFmpeg (`libavcodec`, `libavutil`, `libswscale`)
+Clone the required ROS 2 packages into your workspace:
+
+```bash
+cd ~/ros2_ws/src
+git clone https://github.com/JonanaBanana/AerialTN.git
+git clone https://github.com/PX4/px4_msgs.git
+```
+
+Install the FFmpeg development libraries:
+
+```bash
+sudo apt install libavcodec-dev libavutil-dev libswscale-dev
+```
 
 ## Build
 
 ```bash
 cd ~/ros2_ws
-colcon build --packages-select aerial_tn_utility
+colcon build --packages-up-to aerial_tn_utility
 source install/setup.bash
 ```
 
